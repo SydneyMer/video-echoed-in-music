@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEM DEMO</title>
+    <title>Video Echoed in Music: A Semantic-Temporal Video Parse Guided Latent Music Diffusion for Video-to-Music Generation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,6 +20,8 @@
             grid-template-columns: repeat(6, 1fr);
             gap: 20px; /* 设置单元格间距 */
             padding: 20px;
+            margin-left: 10%;  /* 保证左右边距 */
+            margin-right: 10%; /* 保证左右边距 */
         }
         .video-box {
             background-color: #fff;
@@ -29,7 +31,7 @@
         }
         video {
             width: 100%;
-            max-width: 300px;
+            max-width: 200px;
             height: auto;
             border-radius: 8px;
         }
@@ -38,10 +40,22 @@
             font-size: 14px;
             font-weight: bold;
         }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 36px;
+        }
+        .description {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>VEM DEMO</h1>
+    <h1>Video Echoed in Music: A Semantic-Temporal Video Parse Guided Latent Music Diffusion for Video-to-Music Generation</h1>
+    <p class="description">Welcome to Video Demos for the paper, including a collection of 5 videos with 6 different music.</p>
     <div class="container">
         <!-- 每个视频的代码块 -->
         <div class="video-box">
@@ -49,7 +63,7 @@
                 <source src="videos_demo/1_444816661246/resave_444816661246.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="GT">Video 1</div>
+            <div class="label">GT</div>
         </div>
 
         <div class="video-box">
@@ -57,7 +71,7 @@
                 <source src="videos_demo/1_444816661246/0_vem_444816661246.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Ours">Video 2</div>
+            <div class="label">Ours</div>
         </div>
 
         <div class="video-box">
@@ -65,7 +79,7 @@
                 <source src="videos_demo/1_444816661246/1_vid_444816661246_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="VidMuse">Video 3</div>
+            <div class="label">VidMuse</div>
         </div>
 
         <div class="video-box">
@@ -73,7 +87,7 @@
                 <source src="videos_demo/1_444816661246/2_mu_444816661246_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="M2UGen">Video 4</div>
+            <div class="label">M2UGen</div>
         </div>
 
         <div class="video-box">
@@ -81,7 +95,7 @@
                 <source src="videos_demo/1_444816661246/3_diff_444816661246_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Diff-bgm">Video 5</div>
+            <div class="label">Diff-bgm</div>
         </div>
 
         <div class="video-box">
@@ -89,7 +103,7 @@
                 <source src="videos_demo/1_444816661246/4_cmt_444816661246_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="CMT">Video 6</div>
+            <div class="label">CMT</div>
         </div>
 
         <div class="video-box">
@@ -97,7 +111,7 @@
                 <source src="videos_demo/5_417236306179/resave_417236306179.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="GT">Video 7</div>
+            <div class="label">GT</div>
         </div>
 
         <div class="video-box">
@@ -105,7 +119,7 @@
                 <source src="videos_demo/5_417236306179/0_vem_417236306179.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Ours">Video 8</div>
+            <div class="label">Ours</div>
         </div>
 
         <div class="video-box">
@@ -113,7 +127,7 @@
                 <source src="videos_demo/5_417236306179/1_vid_417236306179_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="VidMuse">Video 9</div>
+            <div class="label">VidMuse</div>
         </div>
 
         <div class="video-box">
@@ -121,7 +135,7 @@
                 <source src="videos_demo/5_417236306179/2_mu_417236306179_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="M2UGen">Video 10</div>
+            <div class="label">M2UGen</div>
         </div>
 
         <div class="video-box">
@@ -129,7 +143,7 @@
                 <source src="videos_demo/5_417236306179/3_diff_417236306179_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Diff-bgm">Video 11</div>
+            <div class="label">Diff-bgm</div>
         </div>
 
         <div class="video-box">
@@ -137,7 +151,7 @@
                 <source src="videos_demo/5_417236306179/4_cmt_417236306179_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="CMT">Video 12</div>
+            <div class="label">CMT</div>
         </div>
 
                 <div class="video-box">
@@ -145,7 +159,7 @@
                 <source src="videos_demo/3_445102830095/resave_445102830095.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="GT">Video 13</div>
+            <div class="label">GT</div>
         </div>
 
         <div class="video-box">
@@ -153,7 +167,7 @@
                 <source src="videos_demo/3_445102830095/0_vem_445102830095.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Ours">Video 14</div>
+            <div class="label">Ours</div>
         </div>
 
         <div class="video-box">
@@ -161,7 +175,7 @@
                 <source src="videos_demo/3_445102830095/1_vid_445102830095_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="VidMuse">Video 15</div>
+            <div class="label">VidMuse</div>
         </div>
 
         <div class="video-box">
@@ -169,7 +183,7 @@
                 <source src="videos_demo/3_445102830095/2_mu_445102830095_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="M2UGen">Video 16</div>
+            <div class="label">M2UGen</div>
         </div>
 
         <div class="video-box">
@@ -177,7 +191,7 @@
                 <source src="videos_demo/3_445102830095/3_diff_445102830095_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Diff-bgm">Video 17</div>
+            <div class="label">Diff-bgm</div>
         </div>
 
         <div class="video-box">
@@ -185,7 +199,7 @@
                 <source src="videos_demo/3_445102830095/4_cmt_445102830095._gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="CMT">Video 18</div>
+            <div class="label">CMT</div>
         </div>
 
                 <div class="video-box">
@@ -193,7 +207,7 @@
                 <source src="videos_demo/8_444802777754/resave_275800382470.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="GT">Video 19</div>
+            <div class="label">GT</div>
         </div>
 
         <div class="video-box">
@@ -201,7 +215,7 @@
                 <source src="videos_demo/8_444802777754/0_vem_275800382470.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Ours">Video 20</div>
+            <div class="label">Ours</div>
         </div>
 
         <div class="video-box">
@@ -209,7 +223,7 @@
                 <source src="videos_demo/8_444802777754/1_vid_444802777754_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="VidMuse">Video 21</div>
+            <div class="label">VidMuse</div>
         </div>
 
         <div class="video-box">
@@ -217,7 +231,7 @@
                 <source src="videos_demo/8_444802777754/2_mu_444802777754_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="M2UGen">Video 22</div>
+            <div class="label">M2UGen</div>
         </div>
 
         <div class="video-box">
@@ -225,7 +239,7 @@
                 <source src="videos_demo/8_444802777754/3_diff_444802777754_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Diff-bgm">Video 23</div>
+            <div class="label">Diff-bgm</div>
         </div>
 
         <div class="video-box">
@@ -233,55 +247,7 @@
                 <source src="videos_demo/8_444802777754/4_cmt_444802777754_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="CMT">Video 24</div>
-        </div>
-
-                        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/8_444802777754/resave_275800382470.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="GT">Video 19</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/8_444802777754/0_vem_275800382470.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="Ours">Video 20</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/8_444802777754/1_vid_444802777754_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="VidMuse">Video 21</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/8_444802777754/2_mu_444802777754_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="M2UGen">Video 22</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/8_444802777754/3_diff_444802777754_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="Diff-bgm">Video 23</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/8_444802777754/4_cmt_444802777754_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="CMT">Video 24</div>
+            <div class="label">CMT</div>
         </div>
 
         <div class="video-box">
@@ -289,7 +255,7 @@
                 <source src="videos_demo/9_353202856064/resave_353202856064.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="GT">Video 25</div>
+            <div class="label">GT</div>
         </div>
 
         <div class="video-box">
@@ -297,7 +263,7 @@
                 <source src="videos_demo/9_353202856064/0_vem_353202856064.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Ours">Video 26</div>
+            <div class="label">Ours</div>
         </div>
 
         <div class="video-box">
@@ -305,7 +271,7 @@
                 <source src="videos_demo/9_353202856064/1_vid_353202856064_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="VidMuse">Video 27</div>
+            <div class="label">VidMuse</div>
         </div>
 
         <div class="video-box">
@@ -313,7 +279,7 @@
                 <source src="videos_demo/9_353202856064/2_mu_353202856064_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="M2UGen">Video 28</div>
+            <div class="label">M2UGen</div>
         </div>
 
         <div class="video-box">
@@ -321,7 +287,7 @@
                 <source src="videos_demo/9_353202856064/3_diff_353202856064_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="Diff-bgm">Video 29</div>
+            <div class="label">Diff-bgm</div>
         </div>
 
         <div class="video-box">
@@ -329,7 +295,7 @@
                 <source src="videos_demo/9_353202856064/4_cmt_353202856064_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="CMT">Video 30</div>
+            <div class="label">CMT</div>
         </div>
     </div>
 </body>
