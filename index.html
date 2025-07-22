@@ -39,7 +39,7 @@
         .grid-labels {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            padding: 10px 10% 0 10%;
+            padding: 10px 10% 0 10.5%;
             font-size: 20px;
             font-weight: bold;
             color: #333;
@@ -64,12 +64,6 @@
             padding: 10px;
             position: relative; /* 为虚线定位提供上下文 */
         }
-        .video-box:nth-child(7n+1) {
-            margin-right: 15px; /* 第1列视频后额外加10px */
-        }
-        .video-box:nth-child(7n+3) {
-            margin-right: 15px; /* 第3列视频后额外加20px */
-        }
 
         /* 虚线分隔：每行的第3个视频 */
         .video-box:nth-child(7n+1)::after,
@@ -77,7 +71,7 @@
             content: '';
             position: absolute;
             top: 0;
-            right: -21px;
+            right: -15px;
             width: 2.5px;
             height: 107%;
             background: repeating-linear-gradient(
@@ -87,7 +81,6 @@
                 transparent 6px,
                 transparent 10px
             );
-
         }
         video {
             width: 100%;
@@ -123,7 +116,7 @@
     <div class="intro-text"> <b>1. Comparison on TB-Match Video Test</b><br>We provide 5 video samples, each with 8
         soundtrack variations, 1 for groundtruth, 2 for the proposed VeM, and 5 for baseline methods (GVMGen,
         VidMuse, M<sup>2</sup>UGen, Diff-BGM, CMT). To showcase the superior temporal and rhythmic alignment
-        of our method, we introduce a specialized demo (VeM_Click) for each test video. The audible "clicks"
+        of our method, we introduce a specialized demo (VeM_click) for each test video. The audible "clicks"
         clearly mark music beat timestamps that coincide with video transitions (the interval error < 0.5s).
         These markers show that transitions occur exactly at beat boundaries rather than at intermediate beat phases,
         explicitly verifying the tighter beat-transition synchronization of our method.
@@ -149,7 +142,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/0_vem_444816661246.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">Ours</div>
+            <div class="label">VeM</div>
         </div>
 
         <div class="video-box">
@@ -261,7 +254,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/0_vem_445102830095.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">Ours</div>
+            <div class="label">VeM</div>
         </div>
 
         <div class="video-box">
@@ -317,7 +310,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/0_vem_275800382470.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">Ours</div>
+            <div class="label">VeM</div>
         </div>
 
         <div class="video-box">
@@ -373,7 +366,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/0_vem_353202856064.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">Ours</div>
+            <div class="label">VeM</div>
         </div>
 
                 <div class="video-box">
@@ -381,7 +374,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/0_vem_click_353202856064.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">Ours</div>
+            <div class="label">VeM</div>
         </div>
 
         <div class="video-box">
