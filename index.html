@@ -22,44 +22,30 @@
             padding: 20px;
             margin-left: 10%;  /* 保证左右边距 */
             margin-right: 10%; /* 保证左右边距 */
-            position: relative; /* 为伪元素定位 */
-        }
-        /* 垂直深灰色分割线，位置在第3和第4列之间 */
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: calc((100% / 6) * 3 + 10px); /* 第3列末尾 + gap */
-            width: 2px;
-            background-color: #444; /* 深灰色 */
-            z-index: 1;
         }
         .video-box {
             background-color: #fff;
             border: 2px solid #ccc;
             border-radius: 10px;
             padding: 10px;
-            position: relative;
-            z-index: 2;
+            position: relative; /* 为虚线定位提供上下文 */
         }
-        /* 虚线分隔：每行的第3个视频
+        /* 虚线分隔：每行的第3个视频 */
         .video-box:nth-child(6n+3)::after {
             content: '';
             position: absolute;
             top: 0;
-            right: -10px; /* 往外偏移一点 */
-            width: 1px;
-            height: 100%;
+            right: -1px;
+            width: 2px;
+            height: 110%;
             background: repeating-linear-gradient(
                 to bottom,
-                #aaa,
-                #aaa 4px,
+                #444,
+                #444 4px,
                 transparent 4px,
                 transparent 8px
             );
         }
-        */
         video {
             width: 100%;
             max-width: 200px;
