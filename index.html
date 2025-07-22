@@ -22,15 +22,28 @@
             padding: 20px;
             margin-left: 10%;  /* 保证左右边距 */
             margin-right: 10%; /* 保证左右边距 */
+            position: relative; /* 为伪元素定位 */
+        }
+        /* 垂直深灰色分割线，位置在第3和第4列之间 */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: calc((100% / 6) * 3 + 10px); /* 第3列末尾 + gap */
+            width: 2px;
+            background-color: #444; /* 深灰色 */
+            z-index: 1;
         }
         .video-box {
             background-color: #fff;
             border: 2px solid #ccc;
             border-radius: 10px;
             padding: 10px;
-            position: relative; /* 为虚线定位提供上下文 */
+            position: relative;
+            z-index: 2;
         }
-        /* 虚线分隔：每行的第3个视频 */
+        /* 虚线分隔：每行的第3个视频
         .video-box:nth-child(6n+3)::after {
             content: '';
             position: absolute;
@@ -46,6 +59,7 @@
                 transparent 8px
             );
         }
+        */
         video {
             width: 100%;
             max-width: 200px;
