@@ -16,8 +16,8 @@
             margin-top: 20px;
         }
         .intro-text {
-            text-align: left;
-            font-size: 20px;       /* 不小，略小于主标题 */
+            text-align: justify;
+            font-size: 24px;
             font-weight: 500;
             margin: 30px 20px 5px 20px;
             padding-left: 10%;
@@ -28,30 +28,35 @@
             margin-left: 10%;
             margin-right: 10%;
         }
-        .grid-labels {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            padding: 10px 20px 0 20px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-        }
-        .grid-labels .group-label:nth-child(1) {
-            grid-column: span 3;
-            text-align: center;
-        }
-        .grid-labels .group-label:nth-child(2) {
-            grid-column: span 3;
-            text-align: center;
-        }
         .container {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(7, 1fr);
             gap: 20px; /* 设置单元格间距 */
             padding: 20px;
             margin-left: 10%;  /* 保证左右边距 */
             margin-right: 10%; /* 保证左右边距 */
         }
+        .grid-labels {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            padding: 10px 10% 0 10%;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        .grid-labels .group-label:nth-child(1) {
+            grid-column: 1 / 2;  /* 对应第1列 */
+        }
+
+        .grid-labels .group-label:nth-child(2) {
+            grid-column: 2 / 4;  /* 对应第2~3列 */
+        }
+
+        .grid-labels .group-label:nth-child(3) {
+            grid-column: 4 / 8;  /* 对应第4~7列 */
+        }
+
         .video-box {
             background-color: #fff;
             border: 2px solid #ccc;
@@ -59,12 +64,20 @@
             padding: 10px;
             position: relative; /* 为虚线定位提供上下文 */
         }
+        .video-box:nth-child(7n+1) {
+            margin-right: 15px; /* 第1列视频后额外加10px */
+        }
+        .video-box:nth-child(7n+3) {
+            margin-right: 15px; /* 第3列视频后额外加20px */
+        }
+
         /* 虚线分隔：每行的第3个视频 */
-        .video-box:nth-child(6n+3)::after {
+        .video-box:nth-child(7n+1)::after,
+        .video-box:nth-child(7n+3)::after {
             content: '';
             position: absolute;
             top: 0;
-            right: -15px;
+            right: -21px;
             width: 2.5px;
             height: 107%;
             background: repeating-linear-gradient(
@@ -103,11 +116,11 @@
     </style>
 </head>
 <body>
-    <h1>Video Echoed in Music:<br>Semantic-Temporal Video Parsing Guided Latent Music Diffusion<br>for Video-to-Music Generation</h1>
+    <h1>Video Echoed in Music:<br> Semantic, Temporal, and Rhythmic Alignment for Video-to-Music Generation</h1>
 <!--    <p class="description"> <b>Abstract.</b> Video-to-Music generation seeks to generate musically appropriate soundtracks that enhance audiovisual immersion for videos. Current approaches, however, suffer from two critical limitations: 1) incomplete representation of video details and 2) inadequate temporal alignment between video and music, especially concerning beat synchronization. In this paper, we introduce VeM, a latent music diffusion that generates high-quality music soundtracks semantically and temporally aligned with input videos. To capture video details, a hierarchical video script parser guides music generation, serving as a music conductor and comprehensively orchestrating semantic and temporal cues. Modality-specific encoders and a storyboard-guided cross-attention (SG-CAtt) ensure precise semantic alignment. Temporal synchronization is enforced at two levels: storyboard-level with position-duration awareness involved by SG-CAtt, and frame-level via transition-beat aligner and adapter synchronizing scene changes with music beats. We contribute a video-script-music dataset and propose novel evaluation metrics tailored to the task. Experiment results demonstrate the superiority, particularly in semantic relevance and temporal precision.</p>-->
     <p class="description"> Welcome to <b>Video Demo</b> site for the paper. </p>
     <p class="description"> (Training codes will be released soon)</p>
-    <div class="intro-text"> <b>1. Comparison on TB-Match Video Test</b>.<br>We provide 5 video samples, each with 8
+    <div class="intro-text"> <b>1. Comparison on TB-Match Video Test</b><br>We provide 5 video samples, each with 8
         soundtrack variations, 1 for groundtruth, 2 for the proposed VeM, and 5 for baseline methods (GVMGen,
         VidMuse, M<sup>2</sup>UGen, Diff-BGM, CMT). To showcase the superior temporal and rhythmic alignment
         of our method, we introduce a specialized demo (VeM_Click) for each test video. The audible "clicks"
@@ -117,6 +130,7 @@
     </div>
     <div class="wrapper">
         <div class="grid-labels">
+        <div class="group-label">Groundtruth</div>
         <div class="group-label">Ours</div>
         <div class="group-label">Comparison</div>
         </div>
@@ -136,6 +150,14 @@
                 Your browser does not support the video tag.
             </video>
             <div class="label">Ours</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/0_vem_click_444816661246.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">VeM_click</div>
         </div>
 
         <div class="video-box">
@@ -183,7 +205,15 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/0_vem_417236306179.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">Ours</div>
+            <div class="label">VeM</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/0_vem_click_417236306179.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">VeM_click</div>
         </div>
 
         <div class="video-box">
@@ -236,6 +266,14 @@
 
         <div class="video-box">
             <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/0_vem_click_445102830095.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">VeM_click</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
                 <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/1_vid_445102830095_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -284,6 +322,14 @@
 
         <div class="video-box">
             <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/0_vem_click_275800382470.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">VeM_click</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
                 <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/1_vid_275800382470_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -325,6 +371,14 @@
         <div class="video-box">
             <video controls>
                 <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/0_vem_353202856064.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">Ours</div>
+        </div>
+
+                <div class="video-box">
+            <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/0_vem_click_353202856064.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="label">Ours</div>
