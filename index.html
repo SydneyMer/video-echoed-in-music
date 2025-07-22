@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Echoed in Music: Semantic-Temporal Video Parsing Guided Latent Music Diffusion for Video-to-Music Generation</title>
+    <title>Video Echoed in Music:<br> Semantic, Temporal, and Rhythmic Alignment <br> for Video-to-Music Generation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,14 +28,23 @@
             border: 2px solid #ccc;
             border-radius: 10px;
             padding: 10px;
+            position: relative; /* 为虚线定位提供上下文 */
         }
+        /* 虚线分隔：每行的第3个视频 */
         .video-box:nth-child(6n+3)::after {
             content: '';
             position: absolute;
-            right: -5px;
             top: 0;
+            right: -10px; /* 往外偏移一点 */
+            width: 1px;
             height: 100%;
-            border-right: 1px dashed #aaa;
+            background: repeating-linear-gradient(
+                to bottom,
+                #aaa,
+                #aaa 4px,
+                transparent 4px,
+                transparent 8px
+            );
         }
         video {
             width: 100%;
