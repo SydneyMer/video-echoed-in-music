@@ -106,6 +106,152 @@
             padding-left: 12%;
             padding-right: 12%;
         }
+        .container-1-1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) 0.7fr;  /* 一行4列 */
+            gap: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            margin-left: 15%;
+            margin-right: 15%;
+            box-sizing: border-box;
+            width: 70%;
+            margin: 10 auto;
+        }
+        .video-box-1-1 {
+            position: relative;
+            height: 255px;            /* ✅ 视频高度固定 */
+            width: 100%;              /* ✅ 宽度自动等分格子 */
+            overflow: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .video-box-1-1 video {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;      /* ✅ 保证视频完整显示 */
+        }
+        .container-1-2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px 40px;
+            padding: 20px;
+            border-radius: 20px;
+            margin-left: 18%;
+            margin-right: 18%;
+            box-sizing: border-box;
+            width: 64%;
+            margin: 10 auto;
+        }
+        .video-box-1-2 {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .video-box-1-2 video {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+        }
+        /* 3 */
+        .container-2-1 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+            padding: 20px;
+            border-radius: 20px;
+            margin-left: 18%;
+            margin-right: 18%;
+            box-sizing: border-box;
+            width: 64%;
+            margin: 10 auto;
+        }
+        .video-box-2-1 {
+            position: relative;
+            aspect-ratio: 9 / 16;
+            overflow: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .video-box-2-1 video {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+        }
+        .container-2-2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 20px;
+            border-radius: 20px;
+            margin-left: 12%;
+            margin-right: 12%;
+            box-sizing: border-box;
+            width: 76%;
+            margin: 10 auto;
+        }
+        .video-box-2-2 {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .video-box-2-2 video {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+        }
+        @media (max-width: 1024px) {
+            .container-1-1 {
+            grid-template-columns: repeat(2, 1fr);
+            }
+            .container-1-2 {
+            grid-template-columns: repeat(2, 1fr);
+            }
+            .container-2-1 {
+            grid-template-columns: repeat(2, 1fr);
+            }
+            .container-2-2 {
+            grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .container-1-1 {
+            grid-template-columns: 1fr;
+            }
+            .container-1-2 {
+            grid-template-columns: 1fr;
+            }
+            .container-2-1 {
+            grid-template-columns: 1fr;
+            }
+            .container-2-2 {
+            grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -127,7 +273,7 @@
         <div class="group-label">Ours</div>
         <div class="group-label">Comparison</div>
         </div>
-    <div class="container">
+        <div class="container">
         <!-- 每个视频的代码块 -->
         <div class="video-box">
             <video controls>
@@ -409,6 +555,141 @@
             <div class="label">CMT</div>
         </div>
     </div>
+    </div>
+    <div class="intro-text"> <b>2. Cross-Domain Video Test</b><br>We present 13 test video demos from
+        various external domains, including 10 randomly selected online samples and 3 SymMV videos (The last three).
+        The audible click markers emphasize beat-transition alignment. These demos demonstrate robustness
+        in complex and diverse scenarios, particularly in terms of semantic relevance and rhythmic
+        consistency.
+    </div>
+    <div class="container-1-1">
+        <div class="video-box-1-1">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/1-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-1">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/3-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-1">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/4-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-1">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/2-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="container-1-2">
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/5-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/6-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/7-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/8-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/9-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/10-complex_click.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/11-symmv-1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/12-symmv-2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-1-2">
+            <video controls>
+                <source src="videos_demo/2_Other_domain_video_demo/13-symmv-3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+        <div class="intro-text"> <b>3. Sora-Generated Video Test</b><br>We display 10 demos (2 variations per
+            video) for 5 silent videos generated by Sora. Prioritizing temporal continuity in
+            Sora-generated videos results in fewer transitions, and thus click markers are
+            omitted for this set. Each video is tested twice with distinct music outputs,
+            both tracks maintaining consistent style, ambiance, feelings, and temporal structure.
+    </div>
+    <div class="container-2-1">
+         <div class="video-box-2-1">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-1-1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-2-1">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-1-2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-2-1">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-4-1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-2-1">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-4-2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-2-1">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-5-1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-2-1">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-5-2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="container-2-2">
+        <div class="video-box-2-2">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-2-1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-2-2">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-2-2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-2-2">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-3-1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box-2-2">
+            <video controls>
+                <source src="videos_demo/3_Sora_video_demo/sora-3-2.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 </body>
 </html>
