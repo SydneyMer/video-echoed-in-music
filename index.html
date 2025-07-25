@@ -13,6 +13,12 @@
             padding: 0;
             text-align: center;
             color: #333;
+            overflow: auto;
+        }
+        #fixed-layout {
+            width: 2450px;
+            height: 1440px;
+            margin: 0 auto;
         }
         h1 {
             margin-top: 20px;
@@ -249,514 +255,516 @@
             height: auto;
             object-fit: cover;
         }
-        @media (max-width: 1024px) {
-            .container-1 {
-            grid-template-columns: repeat(2, 1fr);
-            }
-            .container-2-1 {
-            grid-template-columns: repeat(2, 1fr);
-            }
-            .container-2-2 {
-            grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 600px) {
-            .container-1 {
-            grid-template-columns: 1fr;
-            }
-            .container-2-1 {
-            grid-template-columns: 1fr;
-            }
-            .container-2-2 {
-            grid-template-columns: 1fr;
-            }
+<!--        @media (max-width: 1024px) {-->
+<!--            .container-1 {-->
+<!--            grid-template-columns: repeat(2, 1fr);-->
+<!--            }-->
+<!--            .container-2-1 {-->
+<!--            grid-template-columns: repeat(2, 1fr);-->
+<!--            }-->
+<!--            .container-2-2 {-->
+<!--            grid-template-columns: repeat(2, 1fr);-->
+<!--            }-->
+<!--        }-->
+<!--        @media (max-width: 600px) {-->
+<!--            .container-1 {-->
+<!--            grid-template-columns: 1fr;-->
+<!--            }-->
+<!--            .container-2-1 {-->
+<!--            grid-template-columns: 1fr;-->
+<!--            }-->
+<!--            .container-2-2 {-->
+<!--            grid-template-columns: 1fr;-->
+<!--            }-->
         }
     </style>
 </head>
 <body>
-    <h1><br>Video Echoed in Music:<br> Semantic, Temporal,
-        and Rhythmic Alignment for Video-to-Music Generation</h1>
-    <p class="description"> Welcome to <b>Video Demo</b> page for our paper. A subset of generated music
-        samples is showcased here. All textual descriptions presented on this page are detailed in
-        <b>Appendix D.3</b>, and the corresponding videos are included in the <b>Supplementary
-        Material.</b></p>
+    <div id="fixed-layout">
+        <h1><br>Video Echoed in Music:<br> Semantic, Temporal,
+            and Rhythmic Alignment for Video-to-Music Generation</h1>
+        <p class="description"> Welcome to <b>Video Demo</b> page for our paper. A subset of generated music
+            samples is showcased here. All textual descriptions presented on this page are detailed in
+            <b>Appendix D.3</b>, and the corresponding videos are included in the <b>Supplementary
+            Material.</b></p>
 
-    <div class="intro-text"> <b><br>1. Comparison on TB-Match Video Test</b><br>We provide 5 video samples, each with 8
-        soundtrack variations, 1 for groundtruth, 2 for the proposed VeM, and 5 for baseline methods (GVMGen,
-        VidMuse, M<sup>2</sup>UGen, Diff-BGM, CMT). To showcase the superior temporal and rhythmic alignment
-        of our method, we introduce a specialized demo (VeM_click) for each test video. The audible "clicks"
-        clearly mark music beat timestamps that coincide with video transitions (the interval error < 0.5s).
-        These markers show that transitions occur exactly at beat boundaries rather than at intermediate beat phases,
-        explicitly verifying the tighter beat-transition synchronization of our method.<br><br>
-    </div>
-    <div class="wrapper">
-        <div class="grid-labels">
-        <div class="group-label">Groundtruth</div>
-        <div class="group-label">Ours</div>
-        <div class="group-label">Comparison</div>
+        <div class="intro-text"> <b><br>1. Comparison on TB-Match Video Test</b><br>We provide 5 video samples, each with 8
+            soundtrack variations, 1 for groundtruth, 2 for the proposed VeM, and 5 for baseline methods (GVMGen,
+            VidMuse, M<sup>2</sup>UGen, Diff-BGM, CMT). To showcase the superior temporal and rhythmic alignment
+            of our method, we introduce a specialized demo (VeM_click) for each test video. The audible "clicks"
+            clearly mark music beat timestamps that coincide with video transitions (the interval error < 0.5s).
+            These markers show that transitions occur exactly at beat boundaries rather than at intermediate beat phases,
+            explicitly verifying the tighter beat-transition synchronization of our method.<br><br>
         </div>
-        <div class="container">
-        <!-- 每个视频的代码块 -->
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/resave_444816661246.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GroundTruth</div>
+        <div class="wrapper">
+            <div class="grid-labels">
+            <div class="group-label">Groundtruth</div>
+            <div class="group-label">Ours</div>
+            <div class="group-label">Comparison</div>
         </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/0_vem_444816661246.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/0_vem_click_444816661246.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM_click</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/5_gvm_444816661246_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GVMGen</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/1_vid_444816661246_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VidMuse</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/2_mu_444816661246_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">M<sup>2</sup>UGen</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/3_diff_444816661246_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">Diff-bgm</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/4_cmt_444816661246_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">CMT</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/resave_417236306179.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GroundTruth</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/0_vem_417236306179.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/0_vem_click_417236306179.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM_click</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/5_gvm_417236306179_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GVMGen</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/1_vid_417236306179_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VidMuse</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/2_mu_417236306179_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">M<sup>2</sup>UGen</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/3_diff_417236306179_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">Diff-bgm</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/4_cmt_417236306179_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">CMT</div>
-        </div>
+            <div class="container">
 
                 <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/resave_445102830095.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GroundTruth</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/0_vem_445102830095.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/0_vem_click_445102830095.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM_click</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/5_gvm_445102830095._gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GVMGen</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/1_vid_445102830095_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VidMuse</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/2_mu_445102830095_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">M<sup>2</sup>UGen</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/3_diff_445102830095_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">Diff-bgm</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/4_cmt_445102830095._gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">CMT</div>
-        </div>
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/resave_444816661246.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GroundTruth</div>
+                </div>
 
                 <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/resave_275800382470.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GroundTruth</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/0_vem_275800382470.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/0_vem_click_275800382470.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM_click</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/5_gvm_275800382470_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GVMGen</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/1_vid_275800382470_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VidMuse</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/2_mu_275800382470_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">M<sup>2</sup>UGen</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/3_diff_275800382470_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">Diff-bgm</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/4_cmt_275800382470_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">CMT</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/resave_353202856064.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GroundTruth</div>
-        </div>
-
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/0_vem_353202856064.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM</div>
-        </div>
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/0_vem_444816661246.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM</div>
+                </div>
 
                 <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/0_vem_click_353202856064.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VeM</div>
-        </div>
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/0_vem_click_444816661246.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM_click</div>
+                </div>
 
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/5_gvm_353202856064_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">GVMGen</div>
-        </div>
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/5_gvm_444816661246_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GVMGen</div>
+                </div>
 
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/1_vid_353202856064_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">VidMuse</div>
-        </div>
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/1_vid_444816661246_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VidMuse</div>
+                </div>
 
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/2_mu_353202856064_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">M<sup>2</sup>UGen</div>
-        </div>
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/2_mu_444816661246_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">M<sup>2</sup>UGen</div>
+                </div>
 
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/3_diff_353202856064_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">Diff-bgm</div>
-        </div>
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/3_diff_444816661246_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">Diff-bgm</div>
+                </div>
 
-        <div class="video-box">
-            <video controls>
-                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/4_cmt_353202856064_gn_com.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="label">CMT</div>
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/4_cmt_444816661246_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">CMT</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/resave_417236306179.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GroundTruth</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/0_vem_417236306179.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/0_vem_click_417236306179.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM_click</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/5_gvm_417236306179_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GVMGen</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/1_vid_417236306179_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VidMuse</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/2_mu_417236306179_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">M<sup>2</sup>UGen</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/3_diff_417236306179_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">Diff-bgm</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/4_cmt_417236306179_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">CMT</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/resave_445102830095.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GroundTruth</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/0_vem_445102830095.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/0_vem_click_445102830095.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM_click</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/5_gvm_445102830095._gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GVMGen</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/1_vid_445102830095_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VidMuse</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/2_mu_445102830095_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">M<sup>2</sup>UGen</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/3_diff_445102830095_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">Diff-bgm</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/4_cmt_445102830095._gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">CMT</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/resave_275800382470.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GroundTruth</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/0_vem_275800382470.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/0_vem_click_275800382470.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM_click</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/5_gvm_275800382470_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GVMGen</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/1_vid_275800382470_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VidMuse</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/2_mu_275800382470_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">M<sup>2</sup>UGen</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/3_diff_275800382470_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">Diff-bgm</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/4_cmt_275800382470_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">CMT</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/resave_353202856064.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GroundTruth</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/0_vem_353202856064.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/0_vem_click_353202856064.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VeM</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/5_gvm_353202856064_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">GVMGen</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/1_vid_353202856064_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">VidMuse</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/2_mu_353202856064_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">M<sup>2</sup>UGen</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/3_diff_353202856064_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">Diff-bgm</div>
+                </div>
+
+                <div class="video-box">
+                    <video controls>
+                        <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/4_cmt_353202856064_gn_com.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="label">CMT</div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
-    <div class="intro-text"> <b><br>2. Cross-Domain Video Test</b><br>We present 13 test video demos from
-        various external domains, including 10 randomly selected online samples and 3 SymMV videos.
-        The audible click markers emphasize beat-transition alignment. These demos demonstrate robustness
-        in complex and diverse scenarios, particularly in terms of semantic relevance and rhythmic
-        consistency.<br><br>
-    </div>
-    <div class="label-2">Randomly Selected Online Samples:</div>
-    <div class="container-1">
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/1-complex_click.mp4" type="video/mp4">
-            </video>
+        <div class="intro-text"> <b><br>2. Cross-Domain Video Test</b><br>We present 13 test video demos from
+            various external domains, including 10 randomly selected online samples and 3 SymMV videos.
+            The audible click markers emphasize beat-transition alignment. These demos demonstrate robustness
+            in complex and diverse scenarios, particularly in terms of semantic relevance and rhythmic
+            consistency.<br><br>
         </div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/3-complex_click.mp4" type="video/mp4">
-            </video>
+        <div class="label-2">Randomly Selected Online Samples:</div>
+        <div class="container-1">
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/1-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/3-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/4-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/2-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/5-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/6-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/7-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div></div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/8-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/9-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/10-complex_click.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div></div>
         </div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/4-complex_click.mp4" type="video/mp4">
-            </video>
+        <div class="label-2"><br>Randomly Selected SymMV Samples:</div>
+        <div class="container-1">
+            <div class="video-box-1-2">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/11-symmv-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1-2">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/12-symmv-2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-1-2">
+                <video controls>
+                    <source src="videos_demo/2_Other_domain_video_demo/13-symmv-3.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/2-complex_click.mp4" type="video/mp4">
-            </video>
+        <div class="intro-text"> <b><br>3. Sora-Generated Video Test</b><br>We display 10 demos (2 variations per
+                video) for 5 silent videos generated by Sora. Prioritizing temporal continuity in
+                Sora-generated videos results in fewer transitions, and thus click markers are
+                omitted for this set. Each video is tested twice with distinct music outputs,
+                both tracks maintaining consistent style, ambiance, feelings, and temporal structure.
         </div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/5-complex_click.mp4" type="video/mp4">
-            </video>
+        <div class="container-2-1">
+             <div class="video-box-2-1">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-1-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-2-1">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-1-2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div></div>
+            <div class="video-box-2-1">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-4-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-2-1">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-4-2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div></div>
+            <div class="video-box-2-1">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-5-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-2-1">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-5-2.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/6-complex_click.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/7-complex_click.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div></div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/8-complex_click.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/9-complex_click.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-1">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/10-complex_click.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div></div>
-    </div>
-    <div class="label-2"><br>Randomly Selected SymMV Samples:</div>
-    <div class="container-1">
-        <div class="video-box-1-2">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/11-symmv-1.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-1-2">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/12-symmv-2.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-1-2">
-            <video controls>
-                <source src="videos_demo/2_Other_domain_video_demo/13-symmv-3.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-    <div class="intro-text"> <b><br>3. Sora-Generated Video Test</b><br>We display 10 demos (2 variations per
-            video) for 5 silent videos generated by Sora. Prioritizing temporal continuity in
-            Sora-generated videos results in fewer transitions, and thus click markers are
-            omitted for this set. Each video is tested twice with distinct music outputs,
-            both tracks maintaining consistent style, ambiance, feelings, and temporal structure.
-    </div>
-    <div class="container-2-1">
-         <div class="video-box-2-1">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-1-1.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-2-1">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-1-2.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div></div>
-        <div class="video-box-2-1">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-4-1.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-2-1">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-4-2.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div></div>
-        <div class="video-box-2-1">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-5-1.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-2-1">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-5-2.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-    <div class="container-2-2">
-        <div class="video-box-2-2">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-2-1.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-2-2">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-2-2.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-2-2">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-3-1.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="video-box-2-2">
-            <video controls>
-                <source src="videos_demo/3_Sora_video_demo/sora-3-2.mp4" type="video/mp4">
-            </video>
+        <div class="container-2-2">
+            <div class="video-box-2-2">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-2-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-2-2">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-2-2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-2-2">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-3-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box-2-2">
+                <video controls>
+                    <source src="videos_demo/3_Sora_video_demo/sora-3-2.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
     </div>
 </body>
