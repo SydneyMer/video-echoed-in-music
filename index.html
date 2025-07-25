@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Echoed in Music:<br> Semantic, Temporal, and Rhythmic Alignment <br> for Video-to-Music Generation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Nunito', 'Helvetica Neue', sans-serif;
             background-color: #f4f4f4;
+            line-height: 1.25;
             margin: 0;
             padding: 0;
             text-align: center;
+            color: #333;
         }
         h1 {
             margin-top: 20px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 36px;
+        }
+        .label {
+            margin-top: 10px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .description {
+            text-align: justify;
+            font-family: 'Nunito', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding-left: 31%;
+            padding-right: 31%;
+            color: #555;
         }
         .intro-text {
             text-align: justify;
             font-size: 24px;
             font-weight: 500;
             margin: 30px 20px 5px 20px;
-            padding-left: 10%;
-            padding-right: 10%;
+            padding-left: 13%;
+            padding-right: 13%;
             color: #222;
         }
         .wrapper {
@@ -30,15 +51,15 @@
         }
         .container {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 20px; /* 设置单元格间距 */
+            grid-template-columns: repeat(8, 1fr);
+            gap: 20px;
             padding: 20px;
-            margin-left: 10%;  /* 保证左右边距 */
-            margin-right: 10%; /* 保证左右边距 */
+            margin-left: 10%;
+            margin-right: 10%;
         }
         .grid-labels {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(8, 1fr);
             padding: 10px 10% 0 10.5%;
             font-size: 20px;
             font-weight: bold;
@@ -46,28 +67,40 @@
             text-align: center;
         }
         .grid-labels .group-label:nth-child(1) {
-            grid-column: 1 / 2;  /* 对应第1列 */
+            grid-column: 1 / 2;
         }
 
         .grid-labels .group-label:nth-child(2) {
-            grid-column: 2 / 4;  /* 对应第2~3列 */
+            grid-column: 2 / 4;
         }
 
         .grid-labels .group-label:nth-child(3) {
-            grid-column: 4 / 8;  /* 对应第4~7列 */
+            grid-column: 4 / 9;
         }
-
+        .label-2 {
+            padding: 10px;
+            margin-left: 14%;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+        }
         .video-box {
             background-color: #fff;
             border: 2px solid #ccc;
             border-radius: 10px;
             padding: 10px;
-            position: relative; /* 为虚线定位提供上下文 */
+            position: relative;
+        }
+        .video-box:hover {
+          transform: scale(1.05);
+          transition: all 0.3s ease;
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
         /* 虚线分隔：每行的第3个视频 */
-        .video-box:nth-child(7n+1)::after,
-        .video-box:nth-child(7n+3)::after {
+        .video-box:nth-child(8n+1)::after,
+        .video-box:nth-child(8n+3)::after {
             content: '';
             position: absolute;
             top: 0;
@@ -88,40 +121,22 @@
             height: auto;
             border-radius: 8px;
         }
-        .label {
-            margin-top: 10px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        h1 {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 36px;
-        }
-        .description {
-            text-align: left;
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            padding-left: 12%;
-            padding-right: 12%;
-        }
-        .container-1-1 {
+        .container-1 {
             display: grid;
-            grid-template-columns: repeat(3, 1fr) 0.7fr;  /* 一行4列 */
-            gap: 10px;
+            grid-template-columns: repeat(3, 1fr) 0.7fr;
+            gap: 50px 10px;
             padding: 10px;
-            border-radius: 20px;
+            border-radius: 12px;
             margin-left: 15%;
             margin-right: 15%;
             box-sizing: border-box;
             width: 70%;
             margin: 10 auto;
         }
-        .video-box-1-1 {
+        .video-box-1 {
             position: relative;
-            height: 255px;            /* ✅ 视频高度固定 */
-            width: 100%;              /* ✅ 宽度自动等分格子 */
+            height: 255px;
+            width: 100%;
             overflow: hidden;
             border-radius: 12px;
             display: flex;
@@ -129,32 +144,24 @@
             justify-content: center;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
-        .video-box-1-1 video {
+        .video-box-1 video {
             max-height: 100%;
             max-width: 100%;
             width: auto;
             height: auto;
-            object-fit: contain;      /* ✅ 保证视频完整显示 */
+            object-fit: cover;
         }
-        .container-1-2 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px 40px;
-            padding: 20px;
-            border-radius: 20px;
-            margin-left: 18%;
-            margin-right: 18%;
-            box-sizing: border-box;
-            width: 64%;
-            margin: 10 auto;
+        .video-box-1:hover {
+          transform: scale(1.05);
+          transition: all 0.3s ease;
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
         .video-box-1-2 {
             position: relative;
-            aspect-ratio: 16 / 9;
+            height: 255px;
             overflow: hidden;
             border-radius: 12px;
             display: flex;
-            align-items: center;
             justify-content: center;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
@@ -165,21 +172,28 @@
             height: auto;
             object-fit: cover;
         }
+        .video-box-1-2:hover {
+          transform: scale(1.05);
+          transition: all 0.3s ease;
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
         /* 3 */
         .container-2-1 {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 30px;
-            padding: 20px;
-            border-radius: 20px;
-            margin-left: 18%;
-            margin-right: 18%;
+            grid-template-columns: repeat(2, 1fr) 0.2fr repeat(2, 1fr) 0.2fr repeat(2, 1fr);
+            gap: 60px 30px;
+            padding: 30px;
+            border-radius: 12px;
+            margin-left: 14%;
+            margin-right: 20%;
             box-sizing: border-box;
-            width: 64%;
+            width: 60%;
             margin: 10 auto;
         }
         .video-box-2-1 {
             position: relative;
+            width: 210px;
             aspect-ratio: 9 / 16;
             overflow: hidden;
             border-radius: 12px;
@@ -187,6 +201,11 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .video-box-2-1:hover {
+          transform: scale(1.05);
+          transition: all 0.3s ease;
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
         .video-box-2-1 video {
             max-height: 100%;
@@ -197,18 +216,19 @@
         }
         .container-2-2 {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            padding: 20px;
-            border-radius: 20px;
-            margin-left: 12%;
-            margin-right: 12%;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            padding: 30px;
+            border-radius: 12px;
+            margin-left: 14%;
+            margin-right: 45%;
             box-sizing: border-box;
-            width: 76%;
+            width: 41%;
             margin: 10 auto;
         }
         .video-box-2-2 {
             position: relative;
+            height: 255px;
             aspect-ratio: 16 / 9;
             overflow: hidden;
             border-radius: 12px;
@@ -216,6 +236,11 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .video-box-2-2:hover {
+          transform: scale(1.05);
+          transition: all 0.3s ease;
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
         .video-box-2-2 video {
             max-height: 100%;
@@ -225,10 +250,7 @@
             object-fit: cover;
         }
         @media (max-width: 1024px) {
-            .container-1-1 {
-            grid-template-columns: repeat(2, 1fr);
-            }
-            .container-1-2 {
+            .container-1 {
             grid-template-columns: repeat(2, 1fr);
             }
             .container-2-1 {
@@ -239,10 +261,7 @@
             }
         }
         @media (max-width: 600px) {
-            .container-1-1 {
-            grid-template-columns: 1fr;
-            }
-            .container-1-2 {
+            .container-1 {
             grid-template-columns: 1fr;
             }
             .container-2-1 {
@@ -255,17 +274,20 @@
     </style>
 </head>
 <body>
-    <h1>Video Echoed in Music:<br> Semantic, Temporal, and Rhythmic Alignment for Video-to-Music Generation</h1>
-<!--    <p class="description"> <b>Abstract.</b> Video-to-Music generation seeks to generate musically appropriate soundtracks that enhance audiovisual immersion for videos. Current approaches, however, suffer from two critical limitations: 1) incomplete representation of video details and 2) inadequate temporal alignment between video and music, especially concerning beat synchronization. In this paper, we introduce VeM, a latent music diffusion that generates high-quality music soundtracks semantically and temporally aligned with input videos. To capture video details, a hierarchical video script parser guides music generation, serving as a music conductor and comprehensively orchestrating semantic and temporal cues. Modality-specific encoders and a storyboard-guided cross-attention (SG-CAtt) ensure precise semantic alignment. Temporal synchronization is enforced at two levels: storyboard-level with position-duration awareness involved by SG-CAtt, and frame-level via transition-beat aligner and adapter synchronizing scene changes with music beats. We contribute a video-script-music dataset and propose novel evaluation metrics tailored to the task. Experiment results demonstrate the superiority, particularly in semantic relevance and temporal precision.</p>-->
-    <p class="description"> Welcome to <b>Video Demo</b> site for the paper. </p>
-    <p class="description"> (Training codes will be released soon)</p>
-    <div class="intro-text"> <b>1. Comparison on TB-Match Video Test</b><br>We provide 5 video samples, each with 8
+    <h1><br>Video Echoed in Music:<br> Semantic, Temporal,
+        and Rhythmic Alignment for Video-to-Music Generation</h1>
+    <p class="description"> Welcome to <b>Video Demo</b> page for our paper. A subset of generated music
+        samples is showcased here. All textual descriptions presented on this page are detailed in
+        <b>Appendix D.3</b>, and the corresponding videos are included in the <b>Supplementary
+        Material.</b></p>
+
+    <div class="intro-text"> <b><br>1. Comparison on TB-Match Video Test</b><br>We provide 5 video samples, each with 8
         soundtrack variations, 1 for groundtruth, 2 for the proposed VeM, and 5 for baseline methods (GVMGen,
         VidMuse, M<sup>2</sup>UGen, Diff-BGM, CMT). To showcase the superior temporal and rhythmic alignment
         of our method, we introduce a specialized demo (VeM_click) for each test video. The audible "clicks"
         clearly mark music beat timestamps that coincide with video transitions (the interval error < 0.5s).
         These markers show that transitions occur exactly at beat boundaries rather than at intermediate beat phases,
-        explicitly verifying the tighter beat-transition synchronization of our method.
+        explicitly verifying the tighter beat-transition synchronization of our method.<br><br>
     </div>
     <div class="wrapper">
         <div class="grid-labels">
@@ -280,7 +302,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/resave_444816661246.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">GT</div>
+            <div class="label">GroundTruth</div>
         </div>
 
         <div class="video-box">
@@ -301,6 +323,14 @@
 
         <div class="video-box">
             <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/5_gvm_444816661246_gn_com.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">GVMGen</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
                 <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/1_vid_444816661246_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -312,7 +342,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/1_444816661246/2_mu_444816661246_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">M2UGen</div>
+            <div class="label">M<sup>2</sup>UGen</div>
         </div>
 
         <div class="video-box">
@@ -336,7 +366,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/resave_417236306179.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">GT</div>
+            <div class="label">GroundTruth</div>
         </div>
 
         <div class="video-box">
@@ -357,6 +387,14 @@
 
         <div class="video-box">
             <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/5_gvm_417236306179_gn_com.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">GVMGen</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
                 <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/1_vid_417236306179_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -368,7 +406,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/2_417236306179/2_mu_417236306179_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">M2UGen</div>
+            <div class="label">M<sup>2</sup>UGen</div>
         </div>
 
         <div class="video-box">
@@ -392,7 +430,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/resave_445102830095.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">GT</div>
+            <div class="label">GroundTruth</div>
         </div>
 
         <div class="video-box">
@@ -413,6 +451,14 @@
 
         <div class="video-box">
             <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/5_gvm_445102830095._gn_com.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">GVMGen</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
                 <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/1_vid_445102830095_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -424,7 +470,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/3_445102830095/2_mu_445102830095_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">M2UGen</div>
+            <div class="label">M<sup>2</sup>UGen</div>
         </div>
 
         <div class="video-box">
@@ -448,7 +494,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/resave_275800382470.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">GT</div>
+            <div class="label">GroundTruth</div>
         </div>
 
         <div class="video-box">
@@ -469,6 +515,14 @@
 
         <div class="video-box">
             <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/5_gvm_275800382470_gn_com.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">GVMGen</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
                 <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/1_vid_275800382470_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -480,7 +534,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/4_275800382470/2_mu_275800382470_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">M2UGen</div>
+            <div class="label">M<sup>2</sup>UGen</div>
         </div>
 
         <div class="video-box">
@@ -504,7 +558,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/resave_353202856064.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">GT</div>
+            <div class="label">GroundTruth</div>
         </div>
 
         <div class="video-box">
@@ -525,6 +579,14 @@
 
         <div class="video-box">
             <video controls>
+                <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/5_gvm_353202856064_gn_com.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="label">GVMGen</div>
+        </div>
+
+        <div class="video-box">
+            <video controls>
                 <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/1_vid_353202856064_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -536,7 +598,7 @@
                 <source src="videos_demo/1_TB-Match_test_video_demo/5_353202856064/2_mu_353202856064_gn_com.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="label">M2UGen</div>
+            <div class="label">M<sup>2</sup>UGen</div>
         </div>
 
         <div class="video-box">
@@ -556,65 +618,69 @@
         </div>
     </div>
     </div>
-    <div class="intro-text"> <b>2. Cross-Domain Video Test</b><br>We present 13 test video demos from
-        various external domains, including 10 randomly selected online samples and 3 SymMV videos (The last three).
+    <div class="intro-text"> <b><br>2. Cross-Domain Video Test</b><br>We present 13 test video demos from
+        various external domains, including 10 randomly selected online samples and 3 SymMV videos.
         The audible click markers emphasize beat-transition alignment. These demos demonstrate robustness
         in complex and diverse scenarios, particularly in terms of semantic relevance and rhythmic
-        consistency.
+        consistency.<br><br>
     </div>
-    <div class="container-1-1">
-        <div class="video-box-1-1">
+    <div class="label-2">Randomly Selected Online Samples:</div>
+    <div class="container-1">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/1-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="video-box-1-1">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/3-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="video-box-1-1">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/4-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="video-box-1-1">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/2-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-    </div>
-    <div class="container-1-2">
-        <div class="video-box-1-2">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/5-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="video-box-1-2">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/6-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="video-box-1-2">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/7-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="video-box-1-2">
+        <div></div>
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/8-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="video-box-1-2">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/9-complex_click.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="video-box-1-2">
+        <div class="video-box-1">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/10-complex_click.mp4" type="video/mp4">
             </video>
         </div>
+        <div></div>
+    </div>
+    <div class="label-2"><br>Randomly Selected SymMV Samples:</div>
+    <div class="container-1">
         <div class="video-box-1-2">
             <video controls>
                 <source src="videos_demo/2_Other_domain_video_demo/11-symmv-1.mp4" type="video/mp4">
@@ -631,7 +697,7 @@
             </video>
         </div>
     </div>
-        <div class="intro-text"> <b>3. Sora-Generated Video Test</b><br>We display 10 demos (2 variations per
+    <div class="intro-text"> <b><br>3. Sora-Generated Video Test</b><br>We display 10 demos (2 variations per
             video) for 5 silent videos generated by Sora. Prioritizing temporal continuity in
             Sora-generated videos results in fewer transitions, and thus click markers are
             omitted for this set. Each video is tested twice with distinct music outputs,
@@ -648,6 +714,7 @@
                 <source src="videos_demo/3_Sora_video_demo/sora-1-2.mp4" type="video/mp4">
             </video>
         </div>
+        <div></div>
         <div class="video-box-2-1">
             <video controls>
                 <source src="videos_demo/3_Sora_video_demo/sora-4-1.mp4" type="video/mp4">
@@ -658,6 +725,7 @@
                 <source src="videos_demo/3_Sora_video_demo/sora-4-2.mp4" type="video/mp4">
             </video>
         </div>
+        <div></div>
         <div class="video-box-2-1">
             <video controls>
                 <source src="videos_demo/3_Sora_video_demo/sora-5-1.mp4" type="video/mp4">
