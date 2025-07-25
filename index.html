@@ -18,7 +18,10 @@
         #fixed-layout {
             width: 2450px;
             height: 1440px;
-            margin: 0 auto;
+            transform-origin: top left;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
         h1 {
             margin-top: 20px;
@@ -767,5 +770,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function scaleLayout() {
+        const layout = document.getElementById("fixed-layout");
+        const scaleX = window.innerWidth / 2450;
+        const scaleY = window.innerHeight / 1440;
+        const scale = Math.min(scaleX, scaleY);
+
+        layout.style.transform = `scale(${scale})`;
+        }
+
+        window.addEventListener("resize", scaleLayout);
+        window.addEventListener("DOMContentLoaded", scaleLayout);
+    </script>
+
 </body>
 </html>
